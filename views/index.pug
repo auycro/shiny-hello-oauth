@@ -1,0 +1,16 @@
+//- index.pug
+html
+  head
+    title= title
+  body
+    h1= message
+    form(name='login', method='POST', action='/register')
+        div.input
+            span.label uri
+            input(type='text', name='uri', style='width:80%;')
+        div.input
+            span.label json_template
+            div.input
+              textarea(name='json_template', cols='40', rows='5')
+        div.actions
+            input(type='submit', value='Send')
