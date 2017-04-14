@@ -1,16 +1,13 @@
 //- index.pug
-html
-  head
-    title= title
-  body
-    h1= message
-    form(name='login', method='POST', action='/register')
-        div.input
-            span.label uri
-            input(type='text', name='uri', style='width:80%;')
-        div.input
-            span.label json_template
-            div.input
-              textarea(name='json_template', cols='40', rows='5')
-        div.actions
-            input(type='submit', value='Send')
+extends layout
+
+block content
+    div(class="jumbotron text-center")
+      form(class="center-block", role='form', action="/auth/conyac",method="get", style='max-width: 300px;')
+        div.form-group
+          span.form-group ENDPOINT: 
+          input.form-control(type='text', name="endpoint").form-group
+          span.form-group JSON: 
+          textarea.form-control(name="txtArea",rows="10",cols="50", style='').form-group
+        button.btn.btn-default(type='submit') Submit
+      
